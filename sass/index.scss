@@ -1,0 +1,163 @@
+@import "./variables";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background: url($url);
+	padding: 0 16px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $header-color;
+	margin: auto -16px;
+	padding: 16px 32px;
+	box-shadow: 0 0 10px 0 $box-shawdow-color;
+	
+	h1 {
+		color: $header-h1-color;
+		font-weight: 200;
+	}
+
+	& button {
+		border: none;
+		background-color: $header-color;
+		color: $header-h1-color;
+		border-radius: 25px;
+		padding: 15px;
+		&:hover {
+			border: solid $header-h1-color;
+		}
+	}
+}
+
+footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+	& p {
+		color: #ccc;
+	}
+}
+
+.note {
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+	padding: 10px;
+	width: 240px;
+	margin: 16px;
+	float: left;
+
+	& h1 {
+		font-size: 1.1em;
+		margin-bottom: 6px;
+	}
+	& p {
+		font-size: 1.1em;
+		margin-bottom: 10px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+
+	& button {
+		position: relative;
+		float: right;
+		margin-right: 10px;
+		color: $button-color;
+		border: none;
+		width: 50px;
+		height: 36px;
+		cursor: pointer;
+		outline: none;
+	}
+}
+
+form.create-note {
+	position: relative;
+	width: 480px;
+	margin: 30px auto 20px auto;
+	background: #fff;
+	padding: 15px;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px rgb(138, 137, 137);
+
+	& input,
+	textarea {
+		width: 100%;
+		border: none;
+		padding: 4px;
+		outline: none;
+		font-size: 1.2em;
+		font-family: inherit;
+		resize: none;
+	}
+
+	& button {
+		position: absolute;
+		right: 18px;
+		bottom: -18px;
+		background: $button-color;
+		color: #fff;
+		border: none;
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		box-shadow: 0 1px 3px $box-shawdow-color;
+		cursor: pointer;
+		outline: none;
+	}
+}
+.input {
+	@include textBoxes;
+	margin-bottom: 5%;
+}
+.textarea {
+	@include textBoxes;
+}
+
+.card {
+	position: relative;
+	width: 480px;
+	margin: 30px auto 20px auto;
+	background: #fff;
+	padding: 15px;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px rgb(138, 137, 137);
+	& h1 {
+		text-align: center;
+		color: $header-h1-color;
+		font-weight: 200;
+	}
+	& p {
+		text-align: center;
+	}
+	& button {
+		position: absolute;
+		right: 18px;
+		bottom: -18px;
+		background: $button-color;
+		color: #fff;
+		border: none;
+		border-radius: 50%;
+		width: 80px;
+		height: 50px;
+		box-shadow: 0 1px 3px $box-shawdow-color;
+		cursor: pointer;
+		outline: none;
+	}
+	&:hover {
+		box-shadow: 0 8px 16px 0 $box-shawdow-color;
+	}
+}
+
+.container {
+	padding: 2px 16px;
+}

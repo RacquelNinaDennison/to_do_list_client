@@ -1,0 +1,23 @@
+$header-color: #fdf4f5;
+$header-h1-color: #e8a0bf;
+$footer-paragraph-color: #ccc;
+$button-color: #e8a0bf;
+$box-shawdow-color: rgba(0, 0, 0, 0.3);
+$hover-button: #ba90c6;
+
+// image background url
+$url: "https://www.transparenttextures.com/patterns/climpek.png";
+
+// font styles variables
+
+// input and textarea
+
+@mixin textBoxes {
+	width: 100%;
+	padding: 4px;
+	font-size: 1.2em;
+	font-family: inherit;
+	resize: none;
+	border-color: $button-color;
+	border-radius: 15px;
+}
