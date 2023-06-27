@@ -9,10 +9,10 @@ import Login from "./components/Login/Login";
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(null);
-
+	const url = "https://todolistapi-production-1813.up.railway.app";
 	const mutationSign = useMutation(
 		async (login) => {
-			return await axios.post("http://localhost:3000/auth/", login);
+			return await axios.post(`${url}/auth/`, login);
 		},
 		{
 			onSuccess: (data) => {
@@ -31,7 +31,7 @@ function App() {
 
 	const mutationRegister = useMutation(
 		async (register) => {
-			return await axios.post("http://localhost:3000/auth/register", register);
+			return await axios.post(`${url}/auth/register`, register);
 		},
 		{
 			onSuccess: (data) => {

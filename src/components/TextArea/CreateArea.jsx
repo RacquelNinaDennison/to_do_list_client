@@ -5,15 +5,15 @@ import { useQuery, useQueryClient, useMutation } from "react-query";
 import axios from "axios";
 
 const getNotes = async () => {
-	console.log("Get Notes");
-	console.log(localStorage.getItem("userId"));
+	const url = "https://todolistapi-production-1813.up.railway.app";
 	const response = await axios.get(
-		`http://localhost:3000/note/${localStorage.getItem("userId")}`
+		`${url}/note/${localStorage.getItem("userId")}`
 	);
 	return response.data;
 };
 
 const CreateArea = (props) => {
+	const url = "https://todolistapi-production-1813.up.railway.app";
 	const queryClient = useQueryClient();
 	const [note, setNote] = useState({ title: "", content: "" });
 	const [takingNote, setTakingNote] = useState(false);
@@ -28,7 +28,7 @@ const CreateArea = (props) => {
 	const createNoteMutation = useMutation(
 		(content) => {
 			return axios.post(
-				`http://localhost:3000/note/${localStorage.getItem("userId")}`,
+				`${url}/note/${localStorage.getItem("userId")}`,
 				content
 			);
 		},
@@ -61,7 +61,7 @@ const CreateArea = (props) => {
 	const deleteMutation = useMutation(
 		(id) => {
 			console.log("Id in the mutation " + id);
-			return axios.delete(`http://localhost:3000/note/${id}`);
+			return axios.delete(`${url}/note/${id}`);
 		},
 		{
 			onSuccess: (data) => {
